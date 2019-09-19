@@ -1,4 +1,4 @@
-import User from './User.model'
+import User from './user.model'
 import bcrypt from 'bcrypt'
 import 'dotenv/config';
 import { createToken } from '../../services/auth'
