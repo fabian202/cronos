@@ -3,6 +3,7 @@ import 'dotenv/config';
 import mongoose from 'mongoose';
 import morgan from 'morgan'
 import cors from 'cors'
+import path from 'path'
 import indexRoutes from './routes'
 
 const app = express();
