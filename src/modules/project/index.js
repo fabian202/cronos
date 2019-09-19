@@ -1,0 +1,1 @@
+export { default as ProjectRoutes } from './project.routes';
