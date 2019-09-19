@@ -2,7 +2,7 @@ import axios from 'axios';
 import {getCookie} from './cookies'
 
 const options = {
-  baseURL: `http://localhost:8080/api/`
+  baseURL: `/api/`
   // headers: {'x-access-token': getCookie('token').token}
 }
 
