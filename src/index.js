@@ -10,6 +10,8 @@ const app = express();
 // app.get('/', (req, res) => {
 //   res.send('Hellor world...');
 // });
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 //Body parser
 app.use(express.json());
