@@ -37,11 +37,9 @@ export const useAddEntry = () => {
         setValues,
         handleChange: name => event => {
             setValues({ ...values, [name]: event.target.value });
-            console.log(values)
         },
         handleCheck: name => event => {
             setValues({ ...values, [name]: event.target.checked });
-            console.log(values)
         },
         handleSubmit: event => {
             event.preventDefault();
