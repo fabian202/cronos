@@ -9,6 +9,21 @@ export const useEntries = () => {
 
     const deleteEntry = (_id) => {
         console.log('delete', _id)
+        console.log(entries)
+
+        // const toDelete = entries.map(item => {
+        //     return item.data.filter(entry => {
+        //         return entry._id !== _id
+        //     })
+        // })
+        const toDelete = _.each(entries, (item) => {
+            item.data = _.filter(item.data, (entry) => {
+                return entry._id !== _id
+            })
+        })
+
+        console.log(toDelete)
+        setEntries(toDelete)
     }
 
     useEffect(() => {

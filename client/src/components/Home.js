@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react'
 import { makeStyles } from '@material-ui/core/styles';
-import { useEntries } from '../hooks/useEntries'
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
@@ -10,8 +9,10 @@ import Typography from '@material-ui/core/Typography';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import { navigate } from 'hookrouter';
-import Entries from './Entries'
 import Grid from '@material-ui/core/Grid';
+import { useEntries } from '../hooks/useEntries'
+// import { useDeleteEntry } from '../hooks/useDeleteEntry'
+import Entries from './Entries'
 import Calendar from './Calendar'
 
 const useStyles = makeStyles(theme => ({
@@ -35,7 +36,8 @@ const Home = () => {
     const classes = useStyles();
     const [open, setOpen] = useState(false);
     const [entryId, setEntryId] = useState(null)
-    const { entries, onDeleteEntry, total, date, handleDateChange } = useEntries()
+    const { entries, total, date, handleDateChange, onDeleteEntry } = useEntries()
+    // const { onDeleteEntry } = useDeleteEntry()
 
     useEffect(() => {
       if(entryId) setOpen(true)

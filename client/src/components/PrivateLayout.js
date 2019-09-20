@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
-import { A, navigate } from 'hookrouter';
+import { navigate } from 'hookrouter';
 import {checkCookie} from '../cookies'
 
 const useStyles = makeStyles(theme => ({
@@ -39,18 +39,6 @@ const useStyles = makeStyles(theme => ({
       textDecoration: 'none',
       textTransform: 'uppercase',
       color: 'rgba(0, 0, 0, 0.87)'
-    },
-    heroContent: {
-      padding: theme.spacing(8, 0, 6),
-    },
-    cardHeader: {
-      backgroundColor: theme.palette.grey[200],
-    },
-    cardPricing: {
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'baseline',
-      marginBottom: theme.spacing(2),
     },
     content: {
         alignItems: 'flex-start'
