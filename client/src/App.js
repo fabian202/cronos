@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useReducer } from 'react';
 import './App.css';
 import {useRoutes} from 'hookrouter';
 import Home from './components/Home'
@@ -7,6 +7,11 @@ import Login from './components/Login'
 import SignUp from './components/SignUp'
 import PublicLayout from './components/PublicLayout'
 import PrivateLayout from './components/PrivateLayout'
+import { EntryProvider } from './providers/entryProvider';
+import { entryReducer } from './reducers/entryReducer';
+const initialState = {
+  entries: []
+};
 
 const routes = {
   '/': () => <PublicLayout component={Login} />,
@@ -18,13 +23,14 @@ const routes = {
 const App = () => {
   const routeResult = useRoutes(routes);
 
-  // return routeResult || <NotFoundPage />;
-  return routeResult;
-  // return (
-  //   <Button variant="contained" color="primary">
-  //     Hello World
-  //   </Button>
-  // );
+  const state = useReducer(entryReducer, initialState);
+
+  return (
+    <EntryProvider value={state}>
+      {routeResult}
+    </EntryProvider>
+  );
+  // return routeResult;
 }
 
 export default App;
